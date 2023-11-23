@@ -530,7 +530,7 @@ public class Payment extends javax.swing.JFrame {
 
         for (int a = 0; a < enameLines.length; a++) {
             ewasteInfo.append(String.format("\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t %d                                     %s  "
-                    + " %s%n",
+                    + "                                         %s%n",
                     a + 1, enameLines[a], quantityLines[a]));
         }
 
