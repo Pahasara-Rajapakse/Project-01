@@ -14,7 +14,6 @@ import java.util.Date;
 import javax.swing.Timer;
 import Database.DatabaseConnection;
 import Manager.SellerForms.Seller_Forms;
-import java.awt.event.WindowEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
@@ -31,7 +30,7 @@ import java.util.Calendar;
 public final class ManagerDasshboard extends javax.swing.JFrame {
 
     private final DatabaseConnection dbConnection;
-    
+
     
     
     public ManagerDasshboard() {
