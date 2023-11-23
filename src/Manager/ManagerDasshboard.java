@@ -19,7 +19,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.util.Calendar;
-
+import DateTime.DateTime;
 
 
 
@@ -36,45 +36,19 @@ public final class ManagerDasshboard extends javax.swing.JFrame {
     public ManagerDasshboard() {
         
         initComponents();
-        date();
-        times();
         dbConnection = new DatabaseConnection();
         dbConnection.connect();
         updateProductCount();
         updatePurchasetCount();
         updateRevenueOfPurchases();
+        initDateTime();
    }
-        
-
-
-    
-// generate date
-public void date(){
-        
-    Date d = new Date();
-    SimpleDateFormat sdf = new SimpleDateFormat("yyy-MMM-dd");
-    String dd = sdf.format(d);
-    date.setText(dd);
-    
-   }
- 
-// generate time
-Timer timer;
-SimpleDateFormat st ;
-    
-public void times() {
-    timer = new Timer(1000, (ActionEvent e) -> {
-        Date dt = new Date();
-        st = new SimpleDateFormat("hh:mm:ss a");
-        String tt = st.format(dt);
-        time.setText(tt);
-    });
-        
-    timer.start();
-}
-
-    
-    
+     
+    private void initDateTime() {
+        DateTime datetime = new DateTime(date, time);
+        datetime.date();
+        datetime.times();
+     }
     
     
 public int getCountForTable(String tableName) {
@@ -563,7 +537,7 @@ private void updateRevenueOfPurchases() {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) {  
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
